@@ -21,15 +21,18 @@ const UserList = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{ backgroundColor: '#0e7dff', padding: '10px', height: '10px', width: '1375px',textAlign: 'center', borderRadius: '0px',color: 'white',}}>
       <h2>User List</h2>
-      <div className="user-cards">
+      <div className="user-cards" style={{ display: 'flex', marginBottom: '10px' }}>
         {users.map(user => (
+          <div style={{ marginRight: '40px' , border: '1px solid #000000', padding: '10px',borderRadius: '10px'}}>
           <Link key={user.id} to={`/user/${user.id}`} className="user-card">
-            <img src={user.avatar} alt={`Avatar of ${user.first_name}`} />
-            <p>Name: {user.first_name}</p>
-            <p>Email: {user.email}</p>
+            <img src={user.avatar} alt={`Avatar of ${user.first_name}`} 
+            style={{ marginBottom: '10px', border: '1px solid #000000', padding: '10px',borderRadius: '10px'}} />
+            <h3>Name: {user.first_name}</h3>
+            <h6>Email: {user.email}</h6>
           </Link>
+          </div>
         ))}
       </div>
     </div>
